@@ -1,4 +1,5 @@
 import 'package:crypto_academy/screen/detail_screen.dart';
+import 'package:crypto_academy/screen/edit_profile.dart';
 import 'package:crypto_academy/screen/login_screen.dart';
 import 'package:crypto_academy/screen/topics_list_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: LoginScreen()
+      home: EditProfile()
     );
   }
 }

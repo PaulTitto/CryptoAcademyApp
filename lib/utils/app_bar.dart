@@ -1,7 +1,8 @@
+import 'package:crypto_academy/screen/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-PreferredSizeWidget appBar() {
+PreferredSizeWidget appBar(context) {
   return AppBar(
     elevation: 0,
     leading: IconButton(
@@ -13,12 +14,18 @@ PreferredSizeWidget appBar() {
         onPressed: () {},
         icon: Icon(Icons.notifications_none_outlined),
       ),
-      Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8.0),
-        child: CircleAvatar(
-          radius: 12,
-          backgroundImage: AssetImage(
-            "assets/images/150.jpeg",
+      InkWell(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => EditProfile()));
+        },
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8.0),
+          child: CircleAvatar(
+            radius: 12,
+            backgroundImage: AssetImage(
+              "assets/images/150.jpeg",
+            ),
           ),
         ),
       ),
