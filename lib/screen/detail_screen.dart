@@ -6,7 +6,7 @@ class DetailScreen extends StatefulWidget {
   final String subJudul;
   final String date;
 
-  DetailScreen({
+  const DetailScreen({
     super.key,
     required this.imagePath,
     required this.title,

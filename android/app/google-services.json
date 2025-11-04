@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "796849240847",
+    "project_id": "crypto-academy-91213",
+    "storage_bucket": "crypto-academy-91213.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796849240847:android:e4251d9bd5542b75891c7a",
+        "android_client_info": {
+          "package_name": "com.example.crypto_academy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796849240847-oaps0l35a484l2f09fh91npkod81769s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZFxvNIBrOtW6jfP98bB3ASv_hAot_re8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796849240847-oaps0l35a484l2f09fh91npkod81769s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "796849240847-9a5s4dd0ip9pkc31pdrfr8ae8an7ihag.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cryptoAcademy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

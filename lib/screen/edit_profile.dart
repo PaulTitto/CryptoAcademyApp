@@ -76,94 +76,96 @@ class _EditProfileState extends State<EditProfile> {
           icon: Icon(Icons.arrow_back),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Set Up Profile", style: TextStyle(fontSize: 24)),
-              SizedBox(height: 12),
-
-              InkWell(
-                onTap: _imagePicker,
-                child: CircleAvatar(
-                  radius: 60,
-                  backgroundColor: Colors.grey.shade300,
-                  backgroundImage: _imageFile == null
-                      ? AssetImage("assets/images/150.jpeg")
-                      : FileImage(_imageFile!) as ImageProvider,
-                  child: _imageFile == null
-                      ? const Icon(
-                          Icons.camera_alt,
-                          color: Colors.white70,
-                          size: 30,
-                        )
-                      : null,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Set Up Profile", style: TextStyle(fontSize: 24)),
+                SizedBox(height: 12),
+        
+                InkWell(
+                  onTap: _imagePicker,
+                  child: CircleAvatar(
+                    radius: 60,
+                    backgroundColor: Colors.grey.shade300,
+                    backgroundImage: _imageFile == null
+                        ? AssetImage("assets/images/150.jpeg")
+                        : FileImage(_imageFile!) as ImageProvider,
+                    child: _imageFile == null
+                        ? const Icon(
+                            Icons.camera_alt,
+                            color: Colors.white70,
+                            size: 30,
+                          )
+                        : null,
+                  ),
                 ),
-              ),
-              SizedBox(height: 12),
-
-              TextField(
-                controller: _firstName,
-                decoration: InputDecoration(
-                  labelText: "First Name",
-                  border: OutlineInputBorder(),
+                SizedBox(height: 12),
+        
+                TextField(
+                  controller: _firstName,
+                  decoration: InputDecoration(
+                    labelText: "First Name",
+                    border: OutlineInputBorder(),
+                  ),
                 ),
-              ),
-              SizedBox(height: 12),
-
-              TextField(
-                controller: _lastName,
-                decoration: InputDecoration(
-                  labelText: "Surname",
-                  border: OutlineInputBorder(),
+                SizedBox(height: 12),
+        
+                TextField(
+                  controller: _lastName,
+                  decoration: InputDecoration(
+                    labelText: "Surname",
+                    border: OutlineInputBorder(),
+                  ),
                 ),
-              ),
-              SizedBox(height: 12),
-              _gender(),
-              SizedBox(height: 12),
-              TextField(
-                controller: _dateController,
-                decoration: InputDecoration(
-                  labelText: "Date of Birth",
-                  border: OutlineInputBorder(),
-                  suffixIcon: Icon(Icons.calendar_today),
+                SizedBox(height: 12),
+                _gender(),
+                SizedBox(height: 12),
+                TextField(
+                  controller: _dateController,
+                  decoration: InputDecoration(
+                    labelText: "Date of Birth",
+                    border: OutlineInputBorder(),
+                    suffixIcon: Icon(Icons.calendar_today),
+                  ),
+                  readOnly: true,
+                  onTap: () {
+                    _selectDate(context);
+                  },
                 ),
-                readOnly: true,
-                onTap: () {
-                  _selectDate(context);
-                },
-              ),
-              SizedBox(height: 12),
-              DropdownButtonFormField<String>(
-                value: _selectedCountry,
-                hint: Text("Select your country"),
-                items: _country.map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                onChanged: (String? newValue) {
-                  _selectedCountry = newValue;
-                },
-                decoration: InputDecoration(
-                  labelText: "Country",
-                  border: OutlineInputBorder(),
+                SizedBox(height: 12),
+                DropdownButtonFormField<String>(
+                  initialValue: _selectedCountry,
+                  hint: Text("Select your country"),
+                  items: _country.map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    _selectedCountry = newValue;
+                  },
+                  decoration: InputDecoration(
+                    labelText: "Country",
+                    border: OutlineInputBorder(),
+                  ),
                 ),
-              ),
-              SizedBox(height: 12),
-
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueAccent,
-                  fixedSize: Size(double.maxFinite, 40),
+                SizedBox(height: 12),
+        
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueAccent,
+                    fixedSize: Size(double.maxFinite, 40),
+                  ),
+                  onPressed: () {},
+                  child: Text("Set Up", style: TextStyle(color: Colors.white)),
                 ),
-                onPressed: () {},
-                child: Text("Set Up", style: TextStyle(color: Colors.white)),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

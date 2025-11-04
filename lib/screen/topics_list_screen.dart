@@ -15,7 +15,7 @@ class _TopicsListScreenState extends State<TopicsListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(context),
+      appBar: appBar("",true, context),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(12, 4, 12, 12),
