@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "796849240847-4j266scclglgg7458fe4epcfngtflcns.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.crypto_academy",
+            "certificate_hash": "bc155c43dec860b2bcb48670d3cd282b55b1c0ca"
+          }
+        },
+        {
           "client_id": "796849240847-oaps0l35a484l2f09fh91npkod81769s.apps.googleusercontent.com",
           "client_type": 3
         }
