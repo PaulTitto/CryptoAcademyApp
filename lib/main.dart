@@ -1,6 +1,7 @@
 import 'package:crypto_academy/controllers/auth_gate.dart';
 import 'package:crypto_academy/firebase_options.dart';
 import 'package:crypto_academy/provider/auth_provider.dart';
+import 'package:crypto_academy/provider/crypto_provider.dart';
 import 'package:crypto_academy/screen/academy_screen.dart';
 import 'package:crypto_academy/screen/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,12 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => CryptoProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
